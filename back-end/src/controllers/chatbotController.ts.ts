@@ -12,10 +12,8 @@ export const chatbotController = async (req: Request, res: Response): Promise<vo
     }
 
     try {
-        // Envia a mensagem e o PDF para a API do Google Gemini
         const responseFromGemini = await sendToGoogleGemini(message, pdfBase64);
 
-        // Retorna a resposta ao usuário usando "message" como chave
         res.json({ message: responseFromGemini });
     } catch (error) {
         console.error('Erro ao processar a solicitação:', error);

@@ -25,7 +25,6 @@ const ChatWindow: React.FC = () => {
 
   return (
     <>
-      {/* Botão de chat com animação de expansão e fechamento */}
       <div
         className={`fixed bottom-5 right-5 z-0 text-white shadow-lg focus:outline-none chat-button ${
           isOpen ? 'open' : 'flex items-center justify-center'

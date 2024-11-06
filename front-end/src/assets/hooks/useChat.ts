@@ -14,13 +14,10 @@ export const useChat = () => {
     setMessages((prevMessages) => [...prevMessages, userMessage]);
 
     try {
-      // Enviando a mensagem para a API
       const response = await api.post<{ message: string }>('/send-message', { message: text });
       
-      // Verificando o que foi retornado pela API
       console.log('Resposta da API:', response.data);
       
-      // Verificando se existe uma mensagem no formato esperado
       if (response.data && response.data.message) {
         const botMessage: Message = { text: response.data.message, sender: 'bot' };
         setMessages((prevMessages) => [...prevMessages, botMessage]);
