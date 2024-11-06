@@ -27,13 +27,12 @@ const ChatWindow: React.FC = () => {
     <>
       {/* Botão de chat com animação de expansão e fechamento */}
       <div
-        
-        className={`fixed bottom-5 right-5 z-0 text-white shadow-lg focus:outline-none cursor-pointer chat-button ${
+        className={`fixed bottom-5 right-5 z-0 text-white shadow-lg focus:outline-none chat-button ${
           isOpen ? 'open' : 'flex items-center justify-center'
         }`}
       >
         {!isOpen ? (
-          <div onClick={!isOpen ? handleOpenChat : handleCloseChat} className='shadow-lg'>
+          <div onClick={!isOpen ? handleOpenChat : handleCloseChat} className='cursor-pointer shadow-lg'>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -53,7 +52,7 @@ const ChatWindow: React.FC = () => {
           <div className="h-full z-20">
             <div className="w-full h-fit flex items-center justify-between px-4 py-5 bg-blue-500 text-white rounded-t-lg">
               <h1 className="text-lg font-semibold">Chat GPT</h1>
-              <button onClick={handleCloseChat} className="focus:outline-none">
+              <button onClick={handleCloseChat} className="focus:outline-none cursor-pointer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
